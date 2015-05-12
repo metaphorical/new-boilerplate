@@ -1,0 +1,22 @@
+{
+  "name": "testing-node-jasmine",
+  "version": "1.0.0",
+  "description": "Examples for node.js testing with Jasmine and nock",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "node",
+    "testing",
+    "nock",
+    "jasmine"
+  ],
+  "author": "Rastko",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.12.3",
+    "jasmine-node": "^1.14.5",
+    "nock": "^2.0.1"
+  }
+}
