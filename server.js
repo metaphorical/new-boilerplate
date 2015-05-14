@@ -1,28 +1,21 @@
 var app = require('./app');
-var nock = require('nock');
 
 var apiCall = require('./app/plugins/apiCall.js');
 
-var couchdb = nock('http://myapp.metacouch.com')
-    .get('/users/1')
-    .reply(200, {
-        _id: '123ABC',
-        _rev: '946B7D1C',
-        username: 'metaphorical',
-        email: 'rastko.vukasinovic@gmail.com'
-});
-nock.enableNetConnect();
 
 
 app.get('/', function (req, res) {
     apiCall({
-        hostname: 'http://myapp.metacouch.com',
-        path: '/user/1'
+        host: 'www.omdbapi.com',
+        path: '/?t=arrow&y=&plot=short&r=json'
 
-    }, function(data){
-        res.write(data);
+    }, function(err, data){
+        if (!err) {
+            res.send(data);
+        } else {
+            console.log('ERROR', err);
+        }
     });
-    res.end('Hello World!');
 });
 
 app.use(function (req, res, next) {
