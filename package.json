@@ -1,10 +1,11 @@
 {
-  "name": "testing-node-jasmine",
-  "version": "1.0.0",
+  "name": "quantum-boilerplate",
+  "version": "0.4.0",
   "description": "Examples for node.js testing with Jasmine and nock",
   "main": "server.js",
   "scripts": {
-    "test": "test"
+    "devstart": "node_modules/.bin/nodemon server.js",
+    "test": "node_modules/.bin/jasmine-node tests/specs"
   },
   "keywords": [
     "node",
@@ -15,8 +16,10 @@
   "author": "Rastko",
   "license": "ISC",
   "dependencies": {
+    "bucker": "^1.1.1",
     "express": "^4.12.3",
     "jasmine-node": "^1.14.5",
-    "nock": "^2.0.1"
+    "nock": "^2.0.1",
+    "nodemon": "^1.3.7"
   }
 }
