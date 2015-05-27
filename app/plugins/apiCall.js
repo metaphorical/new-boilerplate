@@ -28,7 +28,7 @@ var apiCall = function(options, callback, write) {
             // End usually means it was success
             .on('end', function() {
                 // Build specific code handling here
-                if (res.statusCode >= 400 && res.statusCode < 500 ) {
+                if (res.statusCode >= 400 && res.statusCode <= 500 ) {
                     var errorObject = {
                         statusCode : res.statusCode,
                         error: 'API error happened',
@@ -38,6 +38,7 @@ var apiCall = function(options, callback, write) {
                     logger.error(errorObject);
                     callback(errorObject, null);
                 } else {
+                    logger.info('Request successful');
                     callback(null, responseString);
                 }
 
