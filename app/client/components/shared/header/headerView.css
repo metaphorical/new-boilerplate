@@ -1,0 +1,12 @@
+.container {
+	width: 80%;
+	margin:1em auto;
+	display: block;
+	height: 40px;
+	
+	padding: 15px;
+	
+	text-align: center;
+	
+	background-color:  rgb(91.7%, 88.8%, 92.5%);
+}

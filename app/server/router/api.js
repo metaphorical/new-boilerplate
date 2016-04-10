@@ -3,16 +3,11 @@
 * API subrouter
 *
 **/
-
 var router = require('express').Router();
 
+var searchCtrl = require('../controllers/api/searchController.js');
 
-var moviesCtrl = require('../controllers/api/movies.js');
-
-
-router.get('/title/:title', moviesCtrl.getByTitle);
-router.get('/detail/:imdbid', moviesCtrl.getById);
-router.get('/search/:title', moviesCtrl.searchByTitle);
+router.get('/games/search/:text', searchCtrl.searchBoardGame);
 
 
 module.exports = router;
